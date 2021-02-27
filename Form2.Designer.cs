@@ -42,6 +42,7 @@ namespace WindowsFormsApp1
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtHmc = new System.Windows.Forms.TextBox();
             this.btCriar = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -124,6 +125,7 @@ namespace WindowsFormsApp1
             this.txtMac.Name = "txtMac";
             this.txtMac.Size = new System.Drawing.Size(139, 20);
             this.txtMac.TabIndex = 8;
+            this.txtMac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMac_KeyPress);
             // 
             // txtIp
             // 
@@ -156,11 +158,21 @@ namespace WindowsFormsApp1
             this.btCriar.UseVisualStyleBackColor = true;
             this.btCriar.Click += new System.EventHandler(this.btCriar_Click);
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(70, 2);
+            this.maskedTextBox1.Mask = "AA:AA:AA:AA:AA";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(139, 20);
+            this.maskedTextBox1.TabIndex = 13;
+            this.maskedTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox1_KeyPress);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(229, 242);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.btCriar);
             this.Controls.Add(this.txtHmc);
             this.Controls.Add(this.txtUser);
@@ -196,5 +208,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtHmc;
         private System.Windows.Forms.Button btCriar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
